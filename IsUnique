@@ -13,6 +13,8 @@ int main()
 	std::cin >> str1;
 	cout << "string entered is " << str1 << endl;
 	
+	if(str1.length() > 256 ) return 1;
+	
 	for (unsigned i = 0; i < str1.length(); i++)
 	{
 		cout << chars[str1[i]] << " " << int(str1[i]) << endl;
