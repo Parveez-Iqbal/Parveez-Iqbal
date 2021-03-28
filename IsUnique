@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <stdbool.h>
+
+using namespace std;
+
+int main()
+{
+	bool *chars = new bool[256]();
+
+	std::string str1("");
+	std::cout << "Enter a string" << std::endl;
+	std::cin >> str1;
+	cout << "string entered is " << str1 << endl;
+	
+	for (unsigned i = 0; i < str1.length(); i++)
+	{
+		cout << chars[str1[i]] << " " << int(str1[i]) << endl;
+		if (chars[str1[i]])
+		{
+			cout << "string is not unique, repeated char is " << str1[i] << endl;
+			return 1;
+		}
+		else
+			chars[str1[i]] = true;
+	}
+	return 0;
+}
